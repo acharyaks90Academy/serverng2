@@ -4,7 +4,10 @@ import { Component,
   OnChanges,
   DoCheck,
   AfterContentInit,
-  SimpleChanges
+  SimpleChanges,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy
 
 } from '@angular/core';
 
@@ -13,7 +16,8 @@ import { Component,
   templateUrl: './serever-element.component.html',
   styleUrls: ['./serever-element.component.css']
 })
-export class SereverElementComponent implements OnInit ,OnChanges, DoCheck,AfterContentInit {
+export class SereverElementComponent implements OnInit ,OnChanges, DoCheck,AfterContentInit,AfterViewInit,
+AfterViewChecked,OnDestroy {
   @Input('srvElement') element:{type:string,name:string,content:string};
   @Input() name;
   constructor() { 
@@ -32,6 +36,16 @@ export class SereverElementComponent implements OnInit ,OnChanges, DoCheck,After
 
   ngAfterContentInit(){
     console.log('ng After Content init called');
+  }
+
+  ngAfterViewInit(){
+    console.log('ng After view init called');
+  };
+  ngAfterViewChecked(){
+    console.log('ng After view checked called');
+  }
+  ngOnDestroy(){
+    console.log('onDestroy called')
   }
 
   

@@ -22,6 +22,16 @@ export class AppComponent {
       name: bluepritnData.serverName,
       content: bluepritnData.serverContent
     });
+
+  }
+
+  onChangeFirst(){
+    console.log('ng After Content init called');
+    this.serverElements[0].name="Change"
+  }
+  onDestroyFirst(){
+    
+    this.serverElements.splice(0,1);
   }
   
 }

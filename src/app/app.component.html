@@ -4,7 +4,8 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-serever-element  *ngFor="let serverelement of serverElements" [srvElement]="serverelement">
+      <button class="btn btn-primary">Click first</button>
+      <app-serever-element  *ngFor="let serverelement of serverElements" [srvElement]="serverelement" [name]="serverelement.name">
         <p>
           <strong *ngIf="serverelement.type === 'server'" style="color: red">{{ serverelement.content }}</strong>
           <em *ngIf="serverelement.type === 'blueprint'">{{ serverelement.content }}</em>
